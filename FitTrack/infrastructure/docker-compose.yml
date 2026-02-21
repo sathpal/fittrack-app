@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+  user-service:
+    build: ./backend/user-service
+    ports:
+      - "4000:4000"
+  workout-service:
+    build: ./backend/workout-service
+    ports:
+      - "4001:4001"
+  social-service:
+    build: ./backend/social-service
+    ports:
+      - "4002:4002"
+  analytics-service:
+    build: ./backend/analytics-service
+    ports:
+      - "4003:4003"
+  notification-service:
+    build: ./backend/notification-service
+    ports:
+      - "4004:4004"
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
